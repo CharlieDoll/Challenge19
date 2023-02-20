@@ -22,14 +22,8 @@ module.exports = () => {
         template: "./index.html",
         title: "Webpack Plugin",
       }),
-      new WebpackPwaManifest({
-        template: "",
-        title: "Webpack pwa Manifest",
-      }),
-      new InjectManifest({
-        template: "",
-        title: "Workbox Plugin",
-      }),
+      new WebpackPwaManifest(),
+      new InjectManifest(),
     ],
 
     module: {
