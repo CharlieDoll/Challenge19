@@ -23,14 +23,17 @@ module.exports = () => {
         title: "Webpack Plugin",
       }),
       new WebpackPwaManifest(),
-      new InjectManifest(),
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
+      }),
     ],
 
     module: {
       rules: [
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, "css-loader"],
+          use: ["style-loader", "css-loader"],
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
